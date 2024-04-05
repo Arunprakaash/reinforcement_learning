@@ -23,6 +23,10 @@ class Agent:
         self.model = LinearQNet(11, 256, 3)
         self.trainer = QTrainer(self.model, lr=LR, gamma=self.gamma)
 
+    def load_model_weights(self, file_path):
+        self.model.load_state_dict(torch.load(file_path))
+        self.model.eval()
+
     def get_state(self, game):
         head = game.snake[0]
         point_l = Point(head.x - 20, head.y)
