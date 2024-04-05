@@ -155,16 +155,3 @@ class SnakeGameAI:
             y -= BLOCK_SIZE
 
         self.head = Point(x, y)
-
-
-if __name__ == '__main__':
-    game = SnakeGameAI()
-
-    # game loop
-    while True:
-        reward, game_over, score = game.play_step(Direction.RIGHT)
-
-        if game_over:
-            break
-
-    print('Final Score', score)
