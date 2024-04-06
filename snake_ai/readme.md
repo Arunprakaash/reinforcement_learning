@@ -1,6 +1,6 @@
 ## snake_ai
 
-This project is an implementation of the classic Snake game using Pygame and Reinforcement Learning with PyTorch. The goal is to train an agent to play the game autonomously and achieve the highest score possible.
+This project uses Pygame and Reinforcement Learning with PyTorch to implement the classic Snake game. The goal is to train an agent to play the game autonomously and achieve the highest score possible.
 
 ### Requirements
 
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 ### Training the Agent
 
-To train the agent, simply run the `train.py` script:
+To train the agent, run the `train.py` script:
 
 ```
 python train.py
