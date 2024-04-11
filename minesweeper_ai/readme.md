@@ -1,4 +1,4 @@
-# MineSweeper RL Project
+# minesweeper_ai
 
 This project implements a MineSweeper game environment and trains a Deep Q-Network (DQN) agent to play the game using PyTorch. The project consists of several Python files:
 
