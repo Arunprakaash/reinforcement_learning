@@ -10,7 +10,7 @@ from render_ui import Render
 class Tester:
     def __init__(self, render_flag):
         self.model = DDQN(36, 36)
-        self.render_flag = render_flag
+        self.render_flag = render_flag | True
         self.width = 6
         self.height = 6
         self.env = MineSweeper(self.width, self.height, 6)
@@ -38,6 +38,7 @@ class Tester:
             self.renderer.state = self.env.state
             self.renderer.draw()
             self.renderer.bug_fix()
+
         next_state, terminal, reward = self.env.choose(i, j)
         return next_state, terminal, reward
 
@@ -99,7 +100,7 @@ def slow_tester():
 
 
 def main():
-    win_tester(1000)
+    slow_tester()
 
 
 main()
