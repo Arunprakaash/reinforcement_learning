@@ -34,12 +34,13 @@ class Tester:
         i = int(action / self.width)
         j = action % self.width
 
+        next_state, terminal, reward = self.env.choose(i, j)
+
         if self.render_flag:
             self.renderer.state = self.env.state
-            self.renderer.draw()
+            self.renderer.draw(save_gif=True, is_terminal = terminal)
             self.renderer.bug_fix()
 
-        next_state, terminal, reward = self.env.choose(i, j)
         return next_state, terminal, reward
 
 

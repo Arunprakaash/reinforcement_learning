@@ -28,6 +28,10 @@ python minesweeper_agent.py
 ```
 This will test the agent's performance over a specified number of games and print out the win rate.
 
+<br>
 
+### minesweeper_agent
+
+![MineSweeper Agent Gameplay](minesweeper.gif)
 
 

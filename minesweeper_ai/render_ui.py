@@ -1,9 +1,9 @@
+import imageio
 import pygame
 
 
 class Render:
     def __init__(self, state):
-
         self.CLOCK = None
         self.SCREEN = None
         self.font = None
@@ -12,7 +12,6 @@ class Render:
             (34, 40, 49),
             (238, 238, 238),
         ]
-
         self.BLUE = [
             (0, 172, 181),
             (0, 165, 181),
@@ -25,6 +24,7 @@ class Render:
         self.WINDOW_HEIGHT = h * self.blockSize
         self.WINDOW_WIDTH = w * self.blockSize
         self.state = state
+        self.frames = []
         self.init()
 
     def init(self):
@@ -34,9 +34,14 @@ class Render:
         self.CLOCK = pygame.time.Clock()
         self.SCREEN.fill(self.GRAY_SHADES[1])
 
-    def draw(self):
+    def draw(self, save_gif=True, is_terminal=False, gif_filename="minesweeper.gif", duration=5, fps=10):
         self.draw_grid()
         pygame.display.update()
+        if save_gif:
+            self.frames.append(pygame.surfarray.array3d(self.SCREEN))  # Capture frame
+            if is_terminal:
+                imageio.mimsave(gif_filename, self.frames, duration=1 / fps)
+                self.frames = []
 
     def add_text(self, no, x, y, color):
         self.SCREEN.blit(self.font.render(str(no), True, color), (x, y))

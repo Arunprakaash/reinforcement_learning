@@ -55,7 +55,7 @@ class Trainer:
         j = action % self.width
         if self.render_flag:
             self.Render.state = self.env.state
-            self.Render.draw()
+            self.Render.draw(save_gif=True)
             self.Render.bug_fix()
         next_state, terminal, reward = self.env.choose(i, j)
         next_fog = 1 - self.env.fog
