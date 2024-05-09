@@ -1,48 +1,52 @@
 ## Atari A2C Training with Stable Baselines3
 
-This project provides a Python script for training an A2C (Advantage Actor-Critic) model using the Stable Baselines3 library on the Atari Pong environment. The script supports command-line arguments to load pre-trained weights, continue learning after loading weights, and specify the total timesteps for training.
+This project aims to provide an efficient Python script for training an A2C (Advantage Actor-Critic) model using the Stable Baselines3 library on the classic Atari Pong environment. The script is designed to support various functionalities such as loading pre-trained weights, continuing learning from pre-trained weights, and specifying the total timesteps for training.
 
-### requirements
+### Requirements
 
-- torch==2.2.2
-- torchvision==0.17.2
-- stable-baselines3[extra]
+Ensure you have the following dependencies installed:
 
-You can install the required dependencies using pip:
+- `torch==2.2.2`
+- `torchvision==0.17.2`
+- `stable-baselines3[extra]`
+
+You can quickly install the required dependencies via pip:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### usage
+### Usage
+You can run the training script using the following command:
 
-```python
+```bash
 python train_a2c.py [options]
 ```
 
-### options
+### Options
 
-- `--load` PATH: Path to pre-trained weights. If specified, the script will load the weights from the given path.
-- `--continue_training`: Continue learning after loading weights. This option is only effective when used in conjunction with `--load`.
-- `--total_timesteps` STEPS: Total timesteps for training. Default is 100000.
+- --load PATH: Specifies the path to pre-trained weights. If provided, the script will load the weights from the given path.
+- --continue_training: Enables continuing learning after loading weights. This option is only effective when used along with --load.
+- --total_timesteps STEPS: Specifies the total timesteps for training. Default is 100,000.
 
 ### Example Usage
-
 To train the model from scratch:
 
 ```bash
 python train_a2c.py
 ```
 
-To load pre-trained weights and continue learning for an additional 500000 timesteps:
+To load pre-trained weights and continue learning for an additional 500,000 timesteps:
 
 ```bash
-python train_a2c.py --load  --continue_training --total_timesteps 500000
+python train_a2c.py --load <path_to_pretrained_weights> --continue_training --total_timesteps 500000
 ```
 
 ### File Structure
 
 - `train_a2c.py`: Main Python script for training the A2C model.
-- `model/` : Directory to save trained model weights.
-- `play_pong_using_model.py` : use the pretrained model to play the game.
+- `model/`: Directory to save trained model weights.
+- `play_pong_using_model.py`: A script to utilize the pre-trained model to play the game.
 
+### pong_ai
+![pong_agent](pong_ai.gif)

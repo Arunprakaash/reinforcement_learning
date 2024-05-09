@@ -1,4 +1,4 @@
-## snake_ai
+ ## snake_ai
 
 This project uses Pygame and Reinforcement Learning with PyTorch to implement the classic Snake game. The goal is to train an agent to play the game autonomously and achieve the highest score possible.
 
@@ -44,3 +44,6 @@ This will load the saved model weights and start the game. The agent will play t
 * `train.py`: script to train the agent.
 * `play_game_with_model.py`: script to play the game using the trained model.
 * `requirements.txt`: list of required packages.
+
+### snake ai
+![snake_agent](snake_ai.gif)
